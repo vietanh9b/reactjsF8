@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <!-- <div class="post-item">
+        <h2 title="Học react tại F8"></h2>
+        <p>Học Reactjs từ cơ bản đến nâng cao</p>
+    </div> -->
+    <div id="root"></div>
+    <script>
+        const root=document.getElementById('root')
+        // dom
+        const post_item=document.createElement('div')
+        post_item.className='post-item'
+
+        const h2Tag=document.createElement('h2')
+        h2Tag.title='Học React tại F8'
+
+        const pTag=document.createElement('p')
+        pTag.innerText='Reactjs từ cơ bản đến nâng cao'
+
+        post_item.appendChild(h2Tag)
+        post_item.appendChild(pTag)
+
+        // root.appendChild(post_item)
+        // react
+
+        const reactPostItem=React.createElement(
+            'div',
+            {
+                className:'post-item'
+            },
+            React.createElement(
+                'h2',
+                {title: 'Học react tại F8'},
+                'Học Reactjs'
+            ),
+            React.createElement(
+                'p',
+                {},
+                'Học Reactjs từ cơ bản đến nâng cao'
+            )
+        )
+        // console.log(reactPostItem);
+        const container=ReactDOM.createRoot(root)
+        container.render(reactPostItem)
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <h1 title="Hello" class="heading">Hello guys</h1> -->
+    <!-- github là nơi lưu trữ mà nguồn react
+    https://www.npmjs.com/package/react là nơi lưu trữ sản phẩm react
+    -->
+    <!-- <ul>
+        <li>Javascipt</li>
+        <li>React</li>
+    </ul> -->
+    <script>
+        const container=document.getElementById('root')
+        // dom
+        const ul= document.createElement('ul')
+        const li1= document.createElement('li')
+        const li2= document.createElement('li')
+
+        li1.innerHTML='Javascipt'
+        li2.innerHTML='React'
+
+        ul.appendChild(li1)
+        ul.appendChild(li2)
+
+        document.body.appendChild(ul)
+        // react
+        const react=React.createElement(
+            'ul',
+            null,
+            React.createElement('li',null,'Javascript'),
+            React.createElement('li',null,'React')
+        )
+
+        const h1React=React.createElement(
+            'h1',
+            {
+                title:'Hello',
+                className:'heading'
+            },
+            'Hello guys'
+        )
+        // version 18
+            // const root= ReactDOM.createRoot(container)
+            // root.render(h1React)
+        // version 17
+            // ReactDOM.render(h1React,container)
+    </script>
+</body>
+</html>
