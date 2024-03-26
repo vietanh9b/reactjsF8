@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- Câu hỏi thường gặp 
+    - Tại sao code thuần dùng map() phải join()... 
+    => (bởi vì khi code thuần thì dữ liệu ta có được sau khi dùng map là 1 mảng khi đó ta sẽ dùng join('') để biến
+    mảng -> string ĐỂ CÓ THỂ DÙNG innerHTML
+    Còn khi ta dùng map() trong jsx thì ta không cần join('')
+    )
+    - Gặp lỗi khi render ra từ mảng => thiếu unique key (resolve: thêm props key có value là key của item)
+    - Không render được 2 element cùng lúc(resolve: sẽ thêm 1 thẻ để container bên ngoài. Ex: div, React.Fragment)
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const root=document.querySelector('#root')
+        const courses=[
+            {
+                id:1,
+                name:'HTML, CSS'
+            },
+            {
+                id:2,
+                name:'Responsive'
+            },
+            {
+                id:3,
+                name:'Reactjs'
+            }
+        ]
+        const ul=(
+            <ul>
+                {courses.map((value,key)=><li key={key}>{value.name}</li>)}
+            </ul>
+            )
+            console.log(ul);
+            ReactDOM.render(ul,root)
+    </script>
+</body>
+</html>

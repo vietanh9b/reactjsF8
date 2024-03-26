@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
@@ -17,7 +18,7 @@
         <li>Javascipt</li>
         <li>React</li>
     </ul> -->
-    <script>
+    <script type="text/babel">
         const container=document.getElementById('root')
         // dom
         const ul= document.createElement('ul')
@@ -30,28 +31,38 @@
         ul.appendChild(li1)
         ul.appendChild(li2)
 
-        document.body.appendChild(ul)
+        // document.body.appendChild(ul)
         // react
-        const react=React.createElement(
-            'ul',
-            null,
-            React.createElement('li',null,'Javascript'),
-            React.createElement('li',null,'React')
-        )
+        // const react=React.createElement(
+        //     'ul',
+        //     null,
+        //     React.createElement('li',null,'Javascript'),
+        //     React.createElement('li',null,'React')
+        // )
 
-        const h1React=React.createElement(
-            'h1',
-            {
-                title:'Hello',
-                className:'heading'
-            },
-            'Hello guys'
-        )
+        // const h1React=React.createElement(
+        //     'h1',
+        //     {
+        //         title:'Hello',
+        //         className:'heading'
+        //     },
+        //     'Hello guys'
+        // )
+
+            const react=(
+                <React.Fragment>
+                <h1 title="Hello" className="heading">Hello guys</h1>
+                <ul>
+                    <li>Javascipt</li>
+                    <li>React</li>
+                </ul>
+                </React.Fragment>
+            )
         // version 18
             // const root= ReactDOM.createRoot(container)
             // root.render(h1React)
         // version 17
-            // ReactDOM.render(h1React,container)
+            ReactDOM.render(react,container)
     </script>
 </body>
 </html>
