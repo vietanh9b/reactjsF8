@@ -18,26 +18,28 @@
             - Footer -> Footer component
         2. Biểu diễn đơn giản với jsx
      -->
-     
     <div id="app"></div>
     <script type="text/babel">
-        function Header(){
+        function Heading(){
             return (
-                <div className="header">Header hihi</div>
+                <h1 className="header">Tôi đã viết Chrome extension đầu tiên của
+                     mình bằng Github Copilot như thế nào?</h1>
             )
         }
-        class Content extends React.Component{
-            render(){
-                return (
-                    <div className="content">Content</div>
-                )
-            }
+        function Picture(){
+            return <img src="img/65fa652ce3a64.jpg"/>
+        }
+        function Para(){
+            return (
+                <p>Câu chuyện của tôi là Tôi đang học tiếng Nhật trên một trang web là Dungmori.com, 
+                    và tôi học từ mới trên trang web Quizlet. Và tôi...</p>
+            )
         }
         const app =(
             <div className='wrapper'>
-                <Header/>
-                <Content/>
-                <div className="footer">Footer</div>
+                <Heading/>
+                <Picture/>
+                <Para/>
             </div>
         )
             // console.log(app);
