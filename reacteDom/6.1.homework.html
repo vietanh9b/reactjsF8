@@ -20,26 +20,22 @@
      -->
     <div id="app"></div>
     <script type="text/babel">
-        function Heading(){
+        function PostItem(){
             return (
-                <h1 className="header">Tôi đã viết Chrome extension đầu tiên của
-                     mình bằng Github Copilot như thế nào?</h1>
-            )
-        }
-        function Picture(){
-            return <img src="img/65fa652ce3a64.jpg"/>
-        }
-        function Para(){
-            return (
-                <p>Câu chuyện của tôi là Tôi đang học tiếng Nhật trên một trang web là Dungmori.com, 
-                    và tôi học từ mới trên trang web Quizlet. Và tôi...</p>
+                <div className='post-item'>
+                    <h1 className="header">Tôi đã viết Chrome extension đầu tiên của
+                         mình bằng Github Copilot như thế nào?</h1>
+                         <img src="img/65fa652ce3a64.jpg"/>
+                         <p>Câu chuyện của tôi là Tôi đang học tiếng Nhật trên một trang web là Dungmori.com, 
+                        và tôi học từ mới trên trang web Quizlet. Và tôi...</p>
+                </div>
             )
         }
         const app =(
             <div className='wrapper'>
-                <Heading/>
-                <Picture/>
-                <Para/>
+                <PostItem/>
+                <PostItem/>
+                <PostItem/>
             </div>
         )
             // console.log(app);
